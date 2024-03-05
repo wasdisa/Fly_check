@@ -16,7 +16,9 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+from account import views #accountta tanimladiğmiz login fonksiyonuna erismek icin import ediyoruz
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('',views.login), #başlangıc konumunu login sayfası olarak ayarliyoruz.
 ]

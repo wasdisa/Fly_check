@@ -76,8 +76,12 @@ WSGI_APPLICATION = 'Fly_check.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql', #kullandigimiz databasein postgresql olacagigini belirtiyoruz
+        'NAME': 'fly_check',#database'in adi
+        'USER': 'postgres',
+        'PASSWORD': '03102002',
+        'HOST': 'localhost',
+        'PORT': '5432',
     }
 }
 
