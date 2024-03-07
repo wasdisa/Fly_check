@@ -1,5 +1,5 @@
 from django.shortcuts import render,HttpResponse,redirect
-from django.contrib.auth import authenticate,login
+from django.contrib.auth import authenticate,login,logout
 from django.contrib.auth.models import User
 
 
@@ -14,7 +14,7 @@ def loginn(request):
 
         if user is not None:
             login(request, user)
-            return redirect("/home/")
+            return redirect("home")
         else:
             return render(request, 'login.html',{"error": "Invalid username or password"})
         
@@ -29,3 +29,7 @@ def register(request):
 
 def home(request):
     return render(request,"home.html")
+
+def logoutPage(request):
+    logout(request)
+    return redirect("login")

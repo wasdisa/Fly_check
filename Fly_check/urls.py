@@ -15,13 +15,10 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import path
-from account import views #accountta tanimladiğmiz login fonksiyonuna erismek icin import ediyoruz
+from django.urls import path,include
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('',views.loginn), #başlangıc konumunu login sayfası olarak ayarliyoruz.
-    path("register/",views.register),
-    path("home/",views.home),
+    path('', include('account.urls')),
 ]
 
