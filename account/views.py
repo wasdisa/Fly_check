@@ -1,5 +1,6 @@
 from django.shortcuts import render,HttpResponse,redirect
 from django.contrib.auth import authenticate,login
+from django.contrib.auth.models import User
 
 
 # Create your views here.
@@ -20,6 +21,10 @@ def loginn(request):
     return render(request,"login.html")
 
 def register(request):
+    if request.method == 'POST':
+        username = request.POST["username"]
+        password = request.POST["password"]
+
     return render(request,"register.html")
 
 def home(request):
