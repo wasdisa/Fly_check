@@ -25,7 +25,7 @@ def register(request):
         username = request.POST["username"]
         password = request.POST["password"]
 
-        if user.objects.filter(username=username).exists():
+        if User.objects.filter(username=username).exists():
             return render(request,"register.html",{"error": "User already exists"})
         else:
             user = User.objects.create(username=username, password=password)
@@ -39,3 +39,6 @@ def home(request):
 def logoutPage(request):
     logout(request)
     return redirect("login")
+
+def add_sub(request):
+    return render(request,"add_sub.html")

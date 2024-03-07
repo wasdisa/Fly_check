@@ -1,4 +1,5 @@
 from django.db import models
+from django.contrib.auth.models import User
 
 # Create your models here.
 
@@ -41,6 +42,6 @@ class Ammo(models.Model):
 class Rent(models.Model):
     rent_no = models.AutoField(primary_key=True)
     rented_uav_serial = models.ForeignKey('UAVS', on_delete=models.CASCADE)
-    who_rent = models.ForeignKey('Suser', on_delete=models.CASCADE)
+    who_rent = models.ForeignKey("Suser", on_delete=models.CASCADE)
     rent_date_start = models.DateTimeField()
     rent_date_end = models.DateTimeField()
