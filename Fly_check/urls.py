@@ -21,4 +21,6 @@ from account import views #accountta tanimladiğmiz login fonksiyonuna erismek i
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('',views.login), #başlangıc konumunu login sayfası olarak ayarliyoruz.
+    path("register/",views.register),
 ]
+
