@@ -1,7 +1,9 @@
 from django.shortcuts import render,HttpResponse,redirect
 from django.contrib.auth import authenticate,login,logout
 from django.contrib.auth.models import User
+from .forms import Brands_from,Ammo_form,Smodel_form
 from .models import UAVS
+from .forms import UAVForm
 
 
 # Create your views here.
@@ -65,4 +67,15 @@ def uva_list(request):
     return render(request, 'uva_list.html', {'UVAS': UVA})
 
 def add_uva(request):
-    return render(request, 'add_auv.html')
+
+        if request.method == 'POST':
+
+         form = UAVForm(request.POST)
+         if form.is_valid():
+            form.save()
+            return redirect('list_uavs')
+         else:
+           form = UAVForm()
+        return render(request, 'add_auv.html', {'form': form})
+
+
