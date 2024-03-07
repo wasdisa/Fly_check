@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+    <body>
+        <div class="container">
+            <h3 class="text-center text-white pt-5" >UVA LIST</h3>
+            <a href="{% url 'home' %}"> <button type="button" class="btn btn-danger" style="margin-right: 5px;">back</button></a>
+                <ul  class="list-group" >
+
+                    <table class="table">
+                        <thead>
+                          <tr>
+                            <th scope="col">serial</th>
+                            <th scope="col">name</th>
+                            <th scope="col">brand</th>
+                            <th scope="col">model</th>
+                            <th scope="col">ammo</th>
+                            <th scope="col">weight</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                            {% for uv in UVAS %}
+                            <tr>
+                               <th scope="row">{{ uv.serial }}</th>
+                               <td> {{ uv.name }}</td>
+                               <td>{{ nesne.brand }}</td>
+                               <td>{{ uv.model }}</td>
+                               <td>{{ uv.ammo }}</td>
+                               <td>{{ uv.weight }}</td>
+                             </tr>
+                            {% endfor %}
+                        </tbody>
+                      </table>
+        </div>
+        
+        
+      <!-- Bootstrap JS and jQuery -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
