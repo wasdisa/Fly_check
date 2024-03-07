@@ -22,5 +22,6 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('',views.loginn), #başlangıc konumunu login sayfası olarak ayarliyoruz.
     path("register/",views.register),
+    path("home/",views.home),
 ]
 
